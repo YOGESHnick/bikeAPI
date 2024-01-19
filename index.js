@@ -7,10 +7,25 @@ const app= express();
 app.use(express.json());
 
 app.use(cors());
-const bikes={
-    "Name":"GT650",
-    "Company":"Royal Enfield"
-}
+
+app.get("/bikes", async (req, res) => {
+    try {
+        const { startingPrice, mileage } = req.query;
+        // A D D   other query params and their variables
+        const query = {};
+
+        if (startingPrice) query.startingPrice = { $gte: parseInt(price) };
+        if (mileage) query.mileage = { $gte: parseInt(mileage) };
+        console.log(query);
+
+        const bikes = await Bike.find(query);
+        res.json(bikes);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
 
 //  P O S T   R E Q U E S T 
 app.post("/bikes/create", async (req,res) => {

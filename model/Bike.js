@@ -10,8 +10,11 @@ const bikeSchema = new mongoose.Schema({
     fuelCapacity : Number,
     kerbWeight : Number,
     groundClearance : Number,
+    seatHeight : Number,
     cc : Number,
-    "ABS" : String
+    "brakes" : String,
+    "imageURL" : String,
+    "website" : String
 }) 
 
 module.exports = mongoose.model("Bike", bikeSchema);
