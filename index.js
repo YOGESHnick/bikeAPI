@@ -10,12 +10,15 @@ app.use(cors());
 
 app.get("/bikes", async (req, res) => {
     try {
-        const { startingPrice, mileage } = req.query;
+        const { startingPrice, mileage, groundClearance, category } = req.query;
         // A D D   other query params and their variables
         const query = {};
 
         if (startingPrice) query.startingPrice = { $gte: parseInt(price) };
         if (mileage) query.mileage = { $gte: parseInt(mileage) };
+        if (groundClearance) query.groundClearance = { $gte: parseInt(groundClearance) };
+        if (category) query.category = { $eq: category };
+
         console.log(query);
 
         const bikes = await Bike.find(query);
