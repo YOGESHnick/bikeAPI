@@ -19,7 +19,7 @@ app.get("/bikes", async (req, res) => {
         if (groundClearance) query.groundClearance = { $gte: parseInt(groundClearance) };
         if (category) query.category = { $eq: category };
 
-        console.log(query);
+        // console.log(query);
 
         const bikes = await Bike.find(query);
         res.json(bikes);
