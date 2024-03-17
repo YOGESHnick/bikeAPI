@@ -63,7 +63,7 @@ a {
   list-style:none;
   /* justify-content: space-between; */
 }
-.nav li a{
+.nav li {
   margin-right: 3vw;
   color: #e6e3e3;
   cursor: pointer;
