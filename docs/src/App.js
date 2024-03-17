@@ -1,30 +1,21 @@
-import React, { useState } from "react";
-import { CopyToClipboard } from "react-copy-to-clipboard";
+import React from "react";
+import Documentation from "./pages/Documentation"
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 import "./App.css";
 
 function App() {
-  const [clipboardState, setClipboardState] = useState(false);
-
   return (
     <div className="App">
-      <div className="container">
-        <CopyToClipboard
-          text="adangommala"
-          onCopy={() => setClipboardState(true)}
-        >
-          <button>
-          Click to copy
-            {clipboardState && (
-              <span style={{ color: "yellow" }}>
-                <br></br>copied
-              </span>
-            )}{" "}
-          </button>
-        </CopyToClipboard>
-
-        <h2>Paste it here</h2>
-        <textarea></textarea>
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/docs" element={<Documentation />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
