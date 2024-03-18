@@ -4,7 +4,7 @@ import CopyToClipboard from "../components/copyToClip";
 const Documentation = () => {
   return (
     <div className="docs">
-      <CopyToClipboard text="https://bikeapi-1.onrender.com/bikes/" />
+      <CopyToClipboard text="localhost:8080/bikes?price={price}&mileage={mileage}&groundClearance={groundClearance}&category={category}" />
     </div>
   );
 };

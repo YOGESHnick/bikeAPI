@@ -12,7 +12,7 @@ const CopyToClip = ({ text }) => {
   };
 
   return (
-    <div>
+    <div className="copyToClip">
       <div className="copy-item">
         <CopyToClipboard
           className="copy"
@@ -20,7 +20,8 @@ const CopyToClip = ({ text }) => {
           onCopy={handleCopy}
         >
           <div className="contain">
-            <p>{text}</p>
+          <p>localhost:8080/bikes?price=<span className="curly">{'{price}'}</span>&mileage=<span className="curly">{'{mileage}'}</span>&groundClearance=<span className="curly">{'{groundClearance}'}</span>&category=<span className="curly">{'{category}'}</span></p>
+
           </div>
         </CopyToClipboard>
         <p className="leftLaOruAdi">{clipboardState && "Copied to clipboard!"}</p>
@@ -29,7 +30,11 @@ const CopyToClip = ({ text }) => {
       <div className="desc">
           <div className="leftOram"></div>
           This endpoint will provide all bikes available as response
-        </div>
+      </div>
+      <br />
+      <h4>Parameter</h4>
+      <hr />
+      <div className="params"></div>
     </div>
   );
 };
