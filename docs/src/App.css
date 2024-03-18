@@ -10,7 +10,7 @@ html {
 body{
   background-color: rgb(255, 255, 255);
 }
-.docs{
+.docs,.Intro{
   margin-top: 20vh;
   display: flex;
   flex-direction: column;
