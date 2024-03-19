@@ -3,7 +3,8 @@ import React from 'react';
 const Intro = () => {
   return (
     <div className="Intro">
-      poda pun
+      Vera yengayaachum po da....po...
+      Mela thaan navbar irku
     </div>
   );
 }
